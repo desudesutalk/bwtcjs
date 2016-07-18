@@ -183,7 +183,7 @@ var bwtc = (function() {
 
 				var tmpOutput = Util.coerceOutputStream([]);
 				Util.writeUnsignedNumber(tmpOutput.stream, fileSize + 1);
-				tmpOutput = tmpOutput.retval;
+				tmpOutput = tmpOutput['retval'];
 				for (i=0; i<tmpOutput.length-1; i++) {
 					outStream.writeByte(tmpOutput[i]);
 				}
@@ -192,7 +192,7 @@ var bwtc = (function() {
 				// call the guts to do the real compression
 				guts(inStream, outStream, fileSize, props, suppressFinalByte);
 
-				return o.retval;
+				return o['retval'];
 			};
 		};
 		Util.decompressFileHelper = function(guts) {
@@ -207,7 +207,7 @@ var bwtc = (function() {
 				// call the guts to do the real decompression
 				guts(inStream, outStream, fileSize);
 
-				return o.retval;
+				return o['retval'];
 			};
 		};
 
